@@ -185,37 +185,6 @@ exports.push([module.i, "  .tabs-wrapper {\n    width: 100%;\n    display: flex;
 
 /***/ }),
 
-/***/ "./src/web/frontend/auth.tsx":
-/*!***********************************!*\
-  !*** ./src/web/frontend/auth.tsx ***!
-  \***********************************/
-/*! exports provided: default */
-/*! exports used: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class Auth {
-    constructor() {
-        this.authenticated = false;
-        this.authenticated = false;
-    }
-    login(cb) {
-        this.authenticated = true;
-        cb();
-    }
-    logout(cb) {
-        this.authenticated = false;
-        cb();
-    }
-    isAuthenticated() {
-        return this.authenticated;
-    }
-}
-/* harmony default export */ __webpack_exports__["a"] = (new Auth());
-
-
-/***/ }),
-
 /***/ "./src/web/frontend/main.tsx":
 /*!***********************************!*\
   !*** ./src/web/frontend/main.tsx ***!
@@ -236,10 +205,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _terminal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./terminal */ "./src/web/frontend/terminal.tsx");
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.css */ "./src/web/frontend/styles.css");
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./auth */ "./src/web/frontend/auth.tsx");
-/* harmony import */ var _otp__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./otp */ "./src/web/frontend/otp.tsx");
-
-
 
 
 
@@ -250,45 +215,14 @@ __webpack_require__.r(__webpack_exports__);
 class App extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     render() {
         return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[/* BrowserRouter */ "a"], null,
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", { className: "App" }, (!_auth__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"].isAuthenticated()) ? (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[/* Route */ "b"], { exact: true, path: "/", component: _passcode__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"] })) : (!_otp__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"].isAuthenticated() ?
-                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[/* Route */ "b"], { exact: true, path: "/two-factor", component: _twofactor__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"] })
-                : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[/* Route */ "b"], { exact: true, path: "/terminal", component: _terminal__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"] })))));
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", { className: "App" },
+                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[/* Route */ "b"], { exact: true, path: "/", component: _passcode__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"] }),
+                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[/* Route */ "b"], { exact: true, path: "/two-factor", component: _twofactor__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"] }),
+                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__[/* Route */ "b"], { exact: true, path: "/terminal", component: _terminal__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"] }))));
     }
 }
 ;
 react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.getElementById('root'));
-
-
-/***/ }),
-
-/***/ "./src/web/frontend/otp.tsx":
-/*!**********************************!*\
-  !*** ./src/web/frontend/otp.tsx ***!
-  \**********************************/
-/*! exports provided: default */
-/*! exports used: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class OTP {
-    constructor() {
-        this.authenticated = false;
-        this.authenticated = false;
-    }
-    login(cb) {
-        this.authenticated = true;
-        cb();
-    }
-    logout(cb) {
-        this.authenticated = false;
-        cb();
-    }
-    isAuthenticated() {
-        console.log(this);
-        return this.authenticated;
-    }
-}
-/* harmony default export */ __webpack_exports__["a"] = (new OTP());
 
 
 /***/ }),
@@ -304,17 +238,13 @@ class OTP {
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth */ "./src/web/frontend/auth.tsx");
-
 
 const Passcode = (props) => {
     return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", { className: "login page" },
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", { className: "form" },
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", { className: "passcode-form" },
                 react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", { type: "text", placeholder: "passcode" }),
-                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", { id: "submit-passcode", onClick: () => _auth__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].login(() => {
-                        props.history.push('/two-factor');
-                    }) }, "Submit passcode")))));
+                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", { id: "submit-passcode" }, "Submit passcode")))));
 };
 /* harmony default export */ __webpack_exports__["a"] = (Passcode);
 
@@ -417,8 +347,6 @@ const Terminal = () => {
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _otp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./otp */ "./src/web/frontend/otp.tsx");
-
 
 const Twofactor = (props) => {
     return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", { className: "login page" },
@@ -426,9 +354,7 @@ const Twofactor = (props) => {
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", { className: "otp-form" },
                 react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", { src: "https://store-images.s-microsoft.com/image/apps.33967.13510798887182917.246b0a3d-c3cc-46fc-9cea-021069d15c09.392bf5f5-ade4-4b36-aa63-bb15d5c3817a", width: "100%" }),
                 react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", { type: "text", placeholder: "otp" }),
-                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", { id: "otp-code", onClick: () => _otp__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].login(() => {
-                        props.history.push('/terminal');
-                    }) }, "Enter OTP code")))));
+                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", { id: "otp-code" }, "Enter OTP code")))));
 };
 /* harmony default export */ __webpack_exports__["a"] = (Twofactor);
 

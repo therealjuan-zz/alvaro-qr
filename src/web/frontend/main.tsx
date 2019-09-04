@@ -15,13 +15,9 @@ class App extends Component {
         return (
             <Router>
                 <div className="App">
-                    { (!auth.isAuthenticated()) ? (
-                        <Route exact path="/" component={Passcode} />
-                    ) : ( !OTP.isAuthenticated() ?
-                            <Route exact path="/two-factor" component={Twofactor} />
-                        : <Route exact path="/terminal" component={Terminal} />
-                    )
-                    }
+                    <Route exact path="/" component={Passcode} />
+                    <Route exact path="/two-factor" component={Twofactor} />
+                    <Route exact path="/terminal" component={Terminal} />
                 </div>
             </Router>
         )

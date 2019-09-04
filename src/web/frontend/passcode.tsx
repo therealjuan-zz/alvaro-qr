@@ -1,5 +1,4 @@
 import React from 'react';
-import Auth from './auth';
 
 const Passcode = (props: { history: string[]; }) => {
     return (
@@ -7,9 +6,7 @@ const Passcode = (props: { history: string[]; }) => {
             <div className="form">
                 <form className="passcode-form">
                     <input type="text" placeholder="passcode" />
-                    <button id="submit-passcode" onClick={() => Auth.login(() => {
-                        props.history.push('/two-factor')
-                    })}>Submit passcode</button>
+                    <button id="submit-passcode">Submit passcode</button>
                 </form>
             </div>
         </div>
